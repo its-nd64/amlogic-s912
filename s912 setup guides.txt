@@ -1,0 +1,20 @@
+grab working armbian minimal and flash it
+mount it and put dtb.img in /boot/
+idk how to fix perm issue figure it out urself, i use Linux fs for win
+open armbianEnv.txt, put this in the bottom: fdtfile=../dtb.img
+remove sd, put it into the box
+boot should be ok,answers some questions and thats it for minimal terminal
+
+heres guide to setup gui and shits
+sudo -i                           so u dont need to spam sudo <cmd>
+apt update
+apt upgrade -y
+# nice ui part
+apt install -y --no-install-recommends gdm3 gnome-shell gnome-terminal
+systemctl enable gdm
+# nice working browser
+apt install -y --no-install-recommends chromium
+optional: apt install -y --no-install-recommends gnome-control-center gnome-system-monitor
+optional: curl -L -o rustdesk.deb https://github.com/rustdesk/rustdesk/releases/download/1.4.1/rustdesk-1.4.1-aarch64.deb && sudo apt install ./rustdesk.deb -y
+
+oh and u should delete unused firmwares
